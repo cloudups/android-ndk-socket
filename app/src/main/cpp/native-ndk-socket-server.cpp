@@ -6,7 +6,7 @@
 #include <arpa/inet.h>
 #include <unistd.h>
 
-#define PORT 3333
+#define PORT 3336
 #define MAXLINKNUM 10
 
 void server() {
@@ -60,7 +60,7 @@ void server() {
                                 inet_ntoa(client_addr.sin_addr));
 
             //定义发送信息
-            char *message = "already link to server";
+            char *message = "message";
             size_t len = sizeof(message);
 
             //发送信息到客户端
@@ -77,8 +77,6 @@ void server() {
             close(client_fd);
         }
     }
-
-    return;
 }
 
 

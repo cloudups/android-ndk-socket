@@ -9,8 +9,8 @@
 #include <arpa/inet.h>
 #include <unistd.h>
 
-#define SERVERPORT 3333
-#define MAXDATASIZE 100
+#define SERVERPORT 3336
+#define MAXDATASIZE 1024
 
 void client() {
 
@@ -44,16 +44,17 @@ void client() {
     }
 
 
-    int recvbytes = 0;
+    int recvbytes = 10;
     //接收数据
-    if (recvbytes = recv(client_fd, buf, MAXDATASIZE, 0) == -1) {
+    if ((recvbytes = recv(client_fd, buf, MAXDATASIZE, 0)) == -1) {
         __android_log_print(ANDROID_LOG_INFO, "jni", "socket recv fail");
         return;
     }
 
     //输出接收到的数据
-    buf[recvbytes] = '\0';
-    __android_log_print(ANDROID_LOG_INFO, "jni", "socket recv: %s", buf);
+//    buf[recvbytes] = '\0';
+    __android_log_print(ANDROID_LOG_INFO, "jni", "socket recv: %s, message length is : %d", buf,
+                        recvbytes);
 
     //关闭socket
     close(client_fd);

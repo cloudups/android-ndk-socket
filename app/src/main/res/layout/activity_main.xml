@@ -10,4 +10,22 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.cloudups.socket.MainActivity">
 
+    <Button
+        android:text="server"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:id="@+id/server"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:text="client"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/server"
+        android:layout_alignRight="@+id/server"
+        android:layout_alignEnd="@+id/server"
+        android:layout_marginTop="84dp"
+        android:id="@+id/client" />
 </RelativeLayout>
